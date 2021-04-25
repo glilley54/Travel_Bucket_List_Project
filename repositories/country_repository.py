@@ -8,7 +8,7 @@ from models.city import City
 #CREATE COUNTRY IN DB
 
 def save(country):
-    sql = "INSERT INTO countries (name, visited) VALUES (%s, %s) RETURNING id"
+    sql = "INSERT INTO countries (name, visited) VALUES (%s, %s) RETURNING *"
     values = [country.name, country.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
@@ -24,7 +24,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = Country(row['name'],row['visited'] row['id'] )
+        country = Country(row['name'],row['visited'], row['id'] )
         tasks.append(country)
     return countries
 
