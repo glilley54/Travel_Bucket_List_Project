@@ -17,6 +17,23 @@ country_repository.save(country_1)
 city_1 = City("Barcelona", country_1)
 city_repository.save(city_1)
 
+city_2 = City("Madrid", country_1)
+city_repository.save(city_2)
+
+city_3 = City("Valencia", country_1)
+city_repository.save(city_3)
+
+country_2 = Country("France")
+country_repository.save(country_2)
+
+city_4 = City("Paris", country_2)
+city_repository.save(city_4)
+
+city_5 = City("Lyon", country_2)
+city_repository.save(city_5)
+
+
+
 pdb.set_trace()
 
 
