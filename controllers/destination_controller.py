@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect
 from repositories import country_repository
 from repositories import city_repository
 
+from models.country import Country
+from models.city import City
+
 from flask import Blueprint
 
 destinations_blueprint = Blueprint("destinations", __name__)
