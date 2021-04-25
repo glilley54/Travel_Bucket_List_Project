@@ -5,21 +5,21 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
-  user_name VARCHAR(255),
+  name VARCHAR(255),
   countries_visited INT,
   cities_visited INT
 );
 
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
-    country_name VARCHAR(255),
+    name VARCHAR(255),
     visited BOOLEAN
 
 );
 
 CREATE TABLE cities (
     id SERIAL PRIMARY KEY,
-    city_name VARCHAR(255),
+    name VARCHAR(255),
     visited BOOLEAN,
     country_id INT REFERENCES countries(id) ON DELETE CASCADE
 

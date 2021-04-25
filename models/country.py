@@ -1,8 +1,9 @@
 class Country
 
-def __init__(self, name, id = None):
+def __init__(self, name, visited = False, id = None,):
       self.name = name
+      self.visited = visited
       self.id = id
 
-def mark_as_visited(self):
-    if 
+def mark_visited(self):
+    if self.visited = True
