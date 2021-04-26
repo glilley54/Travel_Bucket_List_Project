@@ -17,10 +17,10 @@ def visits ():
 
 # NEW
 # GET '/visits/new'
-#@visits_blueprint.route("/cities/new", methods=['GET'])
-#def new_city():
-    #countries = country_repository.select_all()
-    #return render_template("/visits/new.html", all_countries = countries)
+@visits_blueprint.route("/visits/new", methods=['GET'])
+def new_city():
+    countries = country_repository.select_all()
+    return render_template("/visits/new.html", all_countries = countries)
 
 
 
