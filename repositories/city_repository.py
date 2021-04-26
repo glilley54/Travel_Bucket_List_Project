@@ -26,7 +26,7 @@ def select_all():
     for row in results:
         country = country_repository.select(row['country_id'])
         city = City(row['name'],country,row['visited'], row['id'] )
-        tasks.append(city)
+        cities.append(city)
     return cities
 
     #SELECT PARTICULAR CITY BY ID
