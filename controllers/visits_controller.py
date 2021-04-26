@@ -26,10 +26,10 @@ def new_city():
 
 # CREATE
 # POST '/visits'
-#@visits_blueprint.route("/visits",  methods=['POST'])
-#def create_visit():
-    #city_name  = request.form['city']
-    #country = country_repository.select(request.form['country_id'])
-    #city = City(name, country , visited)
-    #city_repository.save(city)
-    #return redirect('/visits')
+@visits_blueprint.route("/visits",  methods=['POST'])
+def create_visit():
+    city_name  = request.form['city']
+    country = country_repository.select(request.form['country_id'])
+    city = City(city_name, country)
+    city_repository.save(city)
+    return redirect('/visits')

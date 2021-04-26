@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 
-<h1>Test</h1>
-    
-</body>
-</html>
+<form action="/visits" method="post">
+
+  <div>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" placeholder="City" required autofocus>
+  </div>
+
+
+  <div>
+    <label for="country">Country</label>
+    <select id="country" name="country_id">
+      {% for country in all_countries %}
+        <option value="{{ country.id }}">{{ country.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <button type="submit">Add Destination</button>
+
+</form>
+
+{% endblock %}
