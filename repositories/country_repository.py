@@ -8,7 +8,7 @@ from models.city import City
 #CREATE COUNTRY IN DB
 
 def save(country):
-    sql = "INSERT INTO countries (name, visited) VALUES (%s, %s) RETURNING *"
+    sql = "INSERT INTO countries (name) VALUES (%s) RETURNING *"
     values = [country.name]
     results = run_sql(sql, values)
     id = results[0]['id']

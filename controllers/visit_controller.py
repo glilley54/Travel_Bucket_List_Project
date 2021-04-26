@@ -7,7 +7,7 @@ from models.city import City
 
 from flask import Blueprint
 
-destinations_blueprint = Blueprint("destinations", __name__)
+destinations_blueprint = Blueprint("visits", __name__)
 
 
 @destinations_blueprint.route("/destinations")

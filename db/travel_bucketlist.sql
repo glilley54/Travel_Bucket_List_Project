@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS countries;
 
 CREATE TABLE countries (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255),
+    name VARCHAR(255)
    
 );
 
@@ -20,11 +20,10 @@ CREATE TABLE cities (
 
 CREATE TABLE visits (
     id SERIAL PRIMARY KEY,
-    date VARCHAR(255)
+    date VARCHAR(255),
     city_id INT REFERENCES cities(id) ON DELETE CASCADE,
-    visited BOOLEAN,
+    visited BOOLEAN
     
-
 );
 
 
