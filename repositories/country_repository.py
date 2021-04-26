@@ -9,7 +9,7 @@ from models.city import City
 
 def save(country):
     sql = "INSERT INTO countries (name, visited) VALUES (%s, %s) RETURNING *"
-    values = [country.name, country.visited]
+    values = [country.name]
     results = run_sql(sql, values)
     id = results[0]['id']
     country.id = id
@@ -24,7 +24,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = Country(row['name'],row['visited'], row['id'] )
+        country = Country(row['name'],row['id'] )
         tasks.append(country)
     return countries
 
@@ -38,14 +38,14 @@ def select(id):
 
     if result is not None:
         
-        contry = Country(result['name'], result['visited'], result['id'] )
+        contry = Country(result['name'], result['id'] )
     return country
 
 # UPDATE/EDIT COUNTRY
 
 def update(country):
     sql = "UPDATE countries SET (name, visited) = (%s, %s) WHERE id = %s"
-    values = [country.name, country.visited, country.id]
+    values = [country.name, country.id]
     run_sql(sql, values)
 
 #DELETE ALL COUNTRIES

@@ -8,8 +8,8 @@ import repositories.country_repository as country_repository
 #CREATE CITY IN DB
 
 def save(city):
-    sql = "INSERT INTO cities (name, visited, country_id) VALUES (%s, %s, %s) RETURNING *"
-    values = [city.name, city.visited, city.country.id]
+    sql = "INSERT INTO cities (name, country_id, visited) VALUES (%s, %s, %s) RETURNING *"
+    values = [city.name, city.country.id, city.visited]
     results = run_sql(sql, values)
     id = results[0]['id']
     city.id = id
@@ -25,7 +25,7 @@ def select_all():
 
     for row in results:
         country = country_repository.select(row['country_id'])
-        city = City(row['name'],row['visited'],country, row['id'] )
+        city = City(row['name'],country,row['visited'], row['id'] )
         tasks.append(city)
     return cities
 
@@ -39,14 +39,14 @@ def select(id):
 
     if result is not None:
         country = country_repository.select(row['country_id'])
-        city = City(result['name'], result['visited'],country, result['id'] )
+        city = City(result['name'],country, result['visited'],result['id'] )
     return city
 
 # UPDATE/EDIT CITY
 
 def update(city):
-    sql = "UPDATE cities SET (name, visited, country_id) = (%s, %s, %s) WHERE id = %s"
-    values = [city.name, city.visited, city.country_id, city.city_id]
+    sql = "UPDATE cities SET (name, country_id, visited) = (%s, %s, %s) WHERE id = %s"
+    values = [city.name, city.country_id, city.visited,  city.id]
     run_sql(sql, values)
 
 
