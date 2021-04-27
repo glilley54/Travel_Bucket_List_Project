@@ -24,4 +24,14 @@
   </p>
 {% endfor %}
 
+{% for city in cities %}
+<div>
+      {% if city.visited == True %}
+      <span> &#9989;</span>
+      {% endif %}
+</div>
+{% endfor %}
+
+
+
 {% endblock %}‹
