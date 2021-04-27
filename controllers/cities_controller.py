@@ -61,8 +61,13 @@ def update_city(id):
     city_name  = request.form['city']
     country = country_repository.select(request.form['country_id'])
     city = City(city_name, country)
-    city_repository.save(city)
+    city_repository.update(city)
     return redirect('/cities')
 
 
     #DELETE
+
+@cities_blueprint.route("/cities/<id>/delete", methods=['POST'])
+def delete_city(id):
+    city_repository.delete(id)
+    return redirect('/cities')
