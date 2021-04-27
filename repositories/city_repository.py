@@ -46,7 +46,7 @@ def select(id):
 
 def update(city):
     sql = "UPDATE cities SET (name, country_id, visited) = (%s, %s, %s) WHERE id = %s"
-    values = [city.name, city.country_id, city.visited,  city.id]
+    values = [city.name, city.country.id, city.visited,  city.id]
     run_sql(sql, values)
 
 

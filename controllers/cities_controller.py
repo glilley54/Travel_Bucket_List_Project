@@ -60,7 +60,7 @@ def edit_city(id):
 def update_city(id):
     city_name  = request.form['city']
     country = country_repository.select(request.form['country_id'])
-    city = City(city_name, country)
+    city = City(city_name, country,False,id)
     city_repository.update(city)
     return redirect('/cities')
 
