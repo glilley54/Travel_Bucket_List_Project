@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Here is the list of Cities on my Bucket List:</h2>
+<h2>Here is the list of Countries on my Bucket List:</h2>
+<h3>Click on the Country to update</h3>
 
 
 
 {% for country in all_countries %}
   <div class="country">
-      {{country.name}}
+      <a href="/countries/{{country.id}}">{{country.name}}</a>
   </div>
+
+  <p>
+    <form action="/countries/{{ country.id }}/delete" method="POST">
+      <input type="submit" value="delete" />
+    </form>
+  </p>
 {% endfor %}
 
 {% endblock %}
+
+
+

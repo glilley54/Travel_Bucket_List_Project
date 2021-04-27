@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/countries/{{country.id}}" method="post">
+  
+
+    <h2>Update Country</h2>
+
+<form action="/countries/" method="post">
+
+  <div>
+    <label for="city">Country:</label>
+    <input type="text" id="coutry" name="country" value="{{country.name}}" required>
+  </div>
+
+
+
+  <button type="submit">Update Country</button>
+
+</form>
+
+{% endblock %}
