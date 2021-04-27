@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
+<h2>Add a new city to your bucket list</h2>
+
 <form action="/visits" method="post">
 
   <div>
     <label for="city">City:</label>
     <input type="text" id="city" name="city" placeholder="City" required autofocus>
   </div>
+
 
 
   <div>
@@ -18,7 +21,7 @@
     </select>
   </div>
 
-  <button type="submit">Add Destination</button>
+  <button type="submit">Add City</button>
 
 </form>
 
