@@ -28,8 +28,14 @@
     margin: 10 auto;
   } */
 
+h1 {
+  color:darkcyan;
+  font-family: "Helvetica", arial, sans-serif;
+  text-align: center;
+}
+
 h2,h3 {
-    color:navy;
+    color:darkcyan;
 }
 .city {
     color:darkcyan;
@@ -68,6 +74,7 @@ h2,h3 {
   th {
     padding: 0px 20px 10px 0px;
     border-bottom: 1px solid papayawhip;
+    
   }
   
   table {
@@ -75,5 +82,5 @@ h2,h3 {
   }
 
   body {
-    background-color:lightgray;
+    background-color:skyblue;
   }
