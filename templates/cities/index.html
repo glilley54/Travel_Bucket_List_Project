@@ -15,25 +15,19 @@
       <div class="country">
         {{city.country.name}}
   </div>
-  
+  <p>City has been visited</p>
+{% if city.visited == True %}
+      <span> &#9989;</span>
+
+      {% endif %}
 
   <p>
     <form action="/cities/{{ city.id }}/delete" method="POST">
       <input type="submit" value="delete" />
     </form>
   </p>
-  {% endfor %}
-
-  <p>
-
-{% for city in cities %}
-<div>
-      {% if city.visited == True %}
-      <span> &#9989;</span>
-      {% endif %}
-</div>
 {% endfor %}
-</p>
+
 
 
 {% endblock %}
