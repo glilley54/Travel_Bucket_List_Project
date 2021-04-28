@@ -1,5 +1,5 @@
 body{
-    font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+    font-family: "Helvetica", arial, sans-serif; font-size: 20px;
   }
   
   .book {
@@ -82,10 +82,10 @@ body{
     margin: 0 auto;
   }
   
-  #home-image {
+  #home-image1 {
     width:100vw;
     height:100vh;
-    background-image: url('images/library.jpg');
+    background-image: url('images/palmtree_image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
   }
