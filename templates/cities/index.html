@@ -12,9 +12,10 @@
 {% for city in all_cities %}
   <div class="city">
     <a href="/cities/{{city.id}}">{{city.name}}</a>
-      <div class="country">
+   
+      
         {{city.country.name}}
-  </div>
+  
   <p>City has been visited</p>
 {% if city.visited == True %}
       <span> &#9989;</span>
@@ -28,6 +29,8 @@
       <input type="submit" value="delete" />
     </form>
   </p>
+
+  </div>
 {% endfor %}
 
 
