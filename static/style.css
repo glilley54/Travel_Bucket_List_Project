@@ -21,7 +21,14 @@
   }
 
 
-h1,h2,h3 {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+h2,h3 {
     color:navy;
 }
 .city {
@@ -37,7 +44,7 @@ h1,h2,h3 {
     margin-left: 20px;
   }
   
-  a 
+  
   
 
   #home-image {
