@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Here is the list of Cities on my Bucket List:</h2>
+<h3>Click on the city to update</h3>
+
+<h3><a href="/cities/new">Add a new city to List</a></h3>
+
+
+
+
+{% for city in all_cities %}
+  <div class="city">
+    <a href="/cities/{{city.id}}">{{city.name}}</a>
+   
+      
+        {{city.country.name}}
+  
+  <p>City has been visited</p>
+{% if city.visited == True %}
+      <span> &#9989;</span>
+      {% else %} 
+      <span> &#x274C; </span>
+
+      {% endif %}
+
+  <p>
+    <form action="/cities/{{ city.id }}/delete" method="POST">
+      <input type="submit" value="delete" />
+    </form>
+  </p>
+
+  </div>
+{% endfor %}
+
+
+
+{% endblock %}

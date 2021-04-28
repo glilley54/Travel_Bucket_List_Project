@@ -7,32 +7,41 @@
 <h3><a href="/cities/new">Add a new city to List</a></h3>
 
 
+<table>
+  <tr>
+    <th>City</th>
+    
+    <th>Country</th>
+    
+    <th>Visited?</th>
+    <th>Delete</th>
+  </tr>
+  {% for city in all_cities %}
+  <tr>
+    <td><a href="/cities/{{city.id}}">{{city.name}}</a></td>
 
-
-{% for city in all_cities %}
-  <div class="city">
-    <a href="/cities/{{city.id}}">{{city.name}}</a>
-   
-      
-        {{city.country.name}}
-  
-  <p>City has been visited</p>
-{% if city.visited == True %}
+    <td>{{city.country.name}}</td>
+    <td>
+      {% if city.visited == True %}
       <span> &#9989;</span>
-      {% else %} 
+      {% else %}
       <span> &#x274C; </span>
 
       {% endif %}
 
-  <p>
-    <form action="/cities/{{ city.id }}/delete" method="POST">
-      <input type="submit" value="delete" />
-    </form>
-  </p>
+    </td>
+    <td>
+      <form action="/cities/{{ city.id }}/delete" method="POST">
+        <input type="submit" value="delete" />
+      </form>
+    </td>
+  </tr>
+
+
 
   </div>
-{% endfor %}
+  {% endfor %}
 
-
+</table>
 
 {% endblock %}
