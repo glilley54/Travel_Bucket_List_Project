@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Here is the list of Cities on my Bucket List:</h2>
-<h3>Click on the city to update</h3>
+<h2>Here are the list of cities on my bucket list:</h2>
+<h3>Click on a city to update</h3>
 
 <!-- <h3><a href="/cities/new">Add a new city to List</a></h3> -->
 <div class="buttons">
@@ -11,6 +11,8 @@
 </form>
 
 </div>
+<br>
+<br>
 
 <table>
   <tr>
@@ -36,9 +38,11 @@
 
     </td>
     <td>
+    </div class= "buttons">
       <form action="/cities/{{ city.id }}/delete" method="POST">
         <input type="submit" value="delete" />
       </form>
+      </div>
     </td>
   </tr>
 

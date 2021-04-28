@@ -29,13 +29,16 @@
   } */
 
 h1 {
-  color:darkcyan;
+  color:white;
   font-family: "Helvetica", arial, sans-serif;
-  text-align: center;
+  padding: 10PX;
+  
 }
 
 h2,h3 {
-    color:darkcyan;
+  color: white;
+  font-family: "Helvetica", arial, sans-serif; 
+  
 }
 .city {
     color:darkcyan;
@@ -53,13 +56,14 @@ h2,h3 {
   
 
   #home-image {
-    width:800px;
-    height:800px;
-    background-image: url('images/palmtree_image.jpg');
+    width:300px;
+    height:300px;
+    
+    background-image: url('images/urhUkQ2-palm-tree-beach-wallpaper.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     margin : 50px ;
-    padding: 50px ;
+    padding: 150px ;
   }
 
 
@@ -84,3 +88,14 @@ h2,h3 {
   body {
     background-color:skyblue;
   }
+
+  /* .buttons {
+    background-color: #4CAF50; /* Green */
+    /* border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  } */ 
