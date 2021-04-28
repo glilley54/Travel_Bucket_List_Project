@@ -5,19 +5,38 @@
 <h3>Click on the Country to update</h3>
 <h3><a href="/countries/new">Add a new country to List</a></h3>
 
+<table>
+<tr>
+<th>Country name</th>
 
+<th>Delete</th>
 
+</tr>
 {% for country in all_countries %}
+
+<tr>
+
+
+<td>
   <div class="country">
       <a href="/countries/{{country.id}}">{{country.name}}</a>
   </div>
+</td>
 
-  <p>
+<td>
+  <div>
     <form action="/countries/{{ country.id }}/delete" method="POST">
       <input type="submit" value="delete" />
     </form>
-  </p>
+  </div>
+</td>
+
+</tr>
+
 {% endfor %}
+
+</table>
+
 
 {% endblock %}
 
