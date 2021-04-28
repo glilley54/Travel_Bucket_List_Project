@@ -1,0 +1,50 @@
+.menu{
+    display: flex;
+    padding: 10px;
+    background-color:darkcyan;
+    color: white;
+  }
+  
+  .menu li a{
+    text-decoration: none;
+  }
+  
+.menu li a:visited{
+    color: white;
+  }
+  
+  .menu li{
+    padding-right: 20px;
+    list-style: none;
+    color: white;
+    font-family: "Helvetica", arial, sans-serif; font-size: 20px;
+  }
+
+
+h1,h2,h3 {
+    color:navy;
+}
+.city {
+    color:darkcyan;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
+
+.country{
+    color: #8899a6;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+  
+  a 
+  
+
+  #home-image {
+    width:100vw;
+    height:100vh;
+    background-image: url('images/palmtree_image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
