@@ -8,35 +8,32 @@
 
 <form action="/cities/" method="post">
 
-  <div>
+ 
     <label for="city">City:</label>
     <input type="text" id="city" name="city" value="{{city.name}}" required>
-  </div>
+  
 
 
-  <div>
+  
     <label for="country">Country</label>
-    <select id="country" name="country_id">
+    <select  name="country_id" id="country">
       {% for country in all_countries %}
-        <option value="{{ country.id }}">{{ country.name }}</option>
-      {% endfor %}
-    </select>
-
-  </div>
-  <select class="form-control">
-    <option>Have you visited here yet??</option>
-    <option>Yes</option>
-    <option>No</option>
-   
-  </select>
-
+        <option value="{{ country.id }}" {% if country.id == city.country.id %} selected {% endif %}>
+        {{ country.name }}
+      </option>
+        {% endfor %}
+      </select>
  
 
-  <p>
-    <form action="/cities/{{ city.id }}/edit/visited" method="POST">
-      <input type="submit" value="mark as visited" />
-    </form>
-  </p>
+      <label for="visited">Have you visited yet?</label>
+      <select name="visited" id="visited">
+        <option value="True" {% if city.visited == True %} selected {% endif %}>Yes</option>
+        <option value="False" {% if city.visited == False %} selected {% endif %}>No</option>
+
+
+
+
+      </select>
 
 
 

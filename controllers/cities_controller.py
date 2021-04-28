@@ -60,7 +60,7 @@ def edit_city(id):
 def update_city(id):
     city_name  = request.form['city']
     country = country_repository.select(request.form['country_id'])
-    city = City(city_name, country,False,id)
+    city = City(city_name, country,request.form['visited'],id)
     city_repository.update(city)
     return redirect('/cities')
 
@@ -72,9 +72,4 @@ def delete_city(id):
     city_repository.delete(id)
     return redirect('/cities')
 
-    # MARK AS VISITIED
-
-@cities_blueprint.route("/cities/<id>/edit/visited", methods=['POST'])
-def visit_city(id):
-    City.mark_visited(id)
-    return redirect('/cities')
+   
