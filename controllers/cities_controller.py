@@ -71,3 +71,10 @@ def update_city(id):
 def delete_city(id):
     city_repository.delete(id)
     return redirect('/cities')
+
+    # MARK AS VISITIED
+
+@cities_blueprint.route("/cities/<id>/edit/visited", methods=['POST'])
+def visit_city(id):
+    City.mark_visited(id)
+    return redirect('/cities')

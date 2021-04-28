@@ -22,8 +22,11 @@
       <input type="submit" value="delete" />
     </form>
   </p>
-{% endfor %}
+  {% endfor %}
 
+  <p>
+
+  
 {% for city in cities %}
 <div>
       {% if city.visited == True %}
@@ -31,7 +34,7 @@
       {% endif %}
 </div>
 {% endfor %}
+</p>
 
 
-
-{% endblock %}‹
+{% endblock %}
